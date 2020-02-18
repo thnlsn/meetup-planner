@@ -31,5 +31,7 @@
 <button type="submit" on:click={incrementAge}>Increment</button>
 <!-- <button type="submit" on:click={changeName}>Fullname</button> -->
 <!-- <input type="text" on:input={inputChange} value={name} id="" /> -->
-<input type="text" bind:value={name} />
 <!-- forceful two-way connection {value and name will always be the same} -->
+<input type="text" bind:value={name} />
+
+<ContactCard />
