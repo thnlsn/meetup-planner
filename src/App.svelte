@@ -1,6 +1,11 @@
 <script>
+  import ContactCard from "./ContactCard.svelte"; // PascalCase is important to svelte
   let name = "Thomas";
   let age = 22;
+
+  let job = "Web Developer";
+  let description = "Full-stack engineer";
+  let image = "";
 
   // rerun this whenever name changes
   $: uppercaseName = name.toUpperCase(); // whenever the application reloads it will always make name uppercase even if it changes
@@ -23,7 +28,7 @@
 
 <style>
   h1 {
-    color: purple;
+    color: purple; /* this styling will only affect THIS component, so using h1 wont affect h1's in other components */
   }
 </style>
 
@@ -32,6 +37,10 @@
 <!-- <button type="submit" on:click={changeName}>Fullname</button> -->
 <!-- <input type="text" on:input={inputChange} value={name} id="" /> -->
 <!-- forceful two-way connection {value and name will always be the same} -->
-<input type="text" bind:value={name} />
+<div>
+  <input type="text" bind:value={name} />
+  <input type="text" bind:value={job} />
+  <textarea rows="3" type="text" bind:value={desc} />
+</div>
 
-<ContactCard />
+<ContactCard {name} {job} {description} {image} />
